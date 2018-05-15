@@ -11,9 +11,7 @@ set -e
  
  # Ensure we are in the project directory
  cd $WORKSPACE
- 
- sudo apt-get install nodejs
- 
+  
  # If ruby version is not installed, install it
    rvm install "ruby-2.2.1"
    rvm use "ruby-2.2.1"
