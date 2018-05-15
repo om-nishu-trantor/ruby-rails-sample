@@ -30,7 +30,7 @@ pipeline {
                branch "develop"
             }
              steps {
-                 sh 'echo deploying $APP_NAME to production'
+                 sh 'echo deploying $APP_NAME to Develop'
              }             
          }
           
@@ -39,7 +39,7 @@ pipeline {
                branch "qa"
             }
              steps {
-                 sh 'echo deploying $APP_NAME to production'
+                 sh 'echo deploying $APP_NAME to qa'
              }             
          }
 
