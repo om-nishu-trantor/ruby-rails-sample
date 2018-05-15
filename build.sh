@@ -27,7 +27,8 @@ set -e
  
  bundle install --deployment
  bundle exec rake db:drop || true
- bundle exec rake db:create db:migrate
+ bundle exec rake db:create 
+ bundle exec rake db:migrate
  bundle exec rake db:seed
  
  # Webkit needs an X server in order to render.
