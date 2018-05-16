@@ -13,8 +13,8 @@ set -e
  cd $WORKSPACE
   
  # If ruby version is not installed, install it
-   rvm install "ruby-2.2.1"
-   rvm use "ruby-2.2.1"
+   rvm install "ruby-$(cat .ruby-version)"
+   rvm use "ruby-$(cat .ruby-version)"
  
  export RAILS_ENV=test
  
