@@ -11,12 +11,10 @@ set -e
  
  # Ensure we are in the project directory
  cd $WORKSPACE
- 
+  
  # If ruby version is not installed, install it
- if ! ruby -v &> /dev/null; then
-   rvm install "ruby-2.5.1"
-   rvm use "ruby-2.5.1"
- fi
+   rvm install "ruby-$(cat .ruby-version)"
+   rvm use "ruby-$(cat .ruby-version)"
  
  export RAILS_ENV=test
  
@@ -27,9 +25,10 @@ set -e
  # Set up local config
  cp config/database.example.yml config/database.yml
  
- bundle install --deployment --retry=3
+ bundle install --deployment
  bundle exec rake db:drop || true
- bundle exec rake db:create db:migrate
+ bundle exec rake db:create 
+ bundle exec rake db:migrate
  bundle exec rake db:seed
  
  # Webkit needs an X server in order to render.
