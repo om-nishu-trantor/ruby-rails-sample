@@ -52,6 +52,21 @@ pipeline {
              }             
          }
      }
+     
+     
+     post {
+          failure {
+               mail to: 'dilkhush.soni@trantorinc.com',
+                    subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                    body: "Something is wrong with ${env.BUILD_URL}"
+          }
+          success {
+               mail to: 'dilkhush.soni@trantorinc.com',
+                    subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
+                    body: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+          }
+     }
+
 
      environment {
         APP_NAME = 'my-app'
