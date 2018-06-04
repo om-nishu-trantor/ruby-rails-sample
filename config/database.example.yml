@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: ruby-rails-sample_production
-  username: ruby-rails-sample
-  password: <%= ENV['RUBY-RAILS-SAMPLE_DATABASE_PASSWORD'] %>
+  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
