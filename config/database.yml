@@ -20,12 +20,13 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: <%= ENV["PSQL_USERNAME"] %>
-  password: <%= ENV["PSQL_PASSWORD"] %>
-
+  
 development:
   <<: *default
-  database: ruby-rails-sample_development
+  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
