@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :test_comments
   root 'welcome#index'
-  get '/v1/versions' => 'welcome#test'
+  get '/v1/version' => 'welcome#test'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
