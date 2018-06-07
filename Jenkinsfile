@@ -48,7 +48,7 @@ pipeline {
                branch "master"
             }
              steps {
-                 sh 'echo deploying $APP_NAME to production'
+                 sh 'eb deploy'
              }             
          }
      }
