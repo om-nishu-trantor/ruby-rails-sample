@@ -48,7 +48,6 @@ pipeline {
                branch "master"
             }
              steps {
-                 sh 'bash test.sh'
                   sh 'eb deploy'
              }             
          }
