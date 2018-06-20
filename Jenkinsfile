@@ -49,7 +49,7 @@ pipeline {
             }
              steps {
                   sh """
-                    curl https://loanhero.deploybot.com/api/v1/deployments -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id":1}'
+                    curl https://loanhero.deploybot.com/api/v1/deployments -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id": 135353}'
                   """
              }             
          }
