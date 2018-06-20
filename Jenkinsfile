@@ -48,7 +48,9 @@ pipeline {
                branch "master"
             }
              steps {
-                  sh 'eb deploy'
+                  sh """
+                    curl https://yoursubdomain.deploybot.com/api/v1/deployments -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id":1}'
+                  """
              }             
          }
      }
