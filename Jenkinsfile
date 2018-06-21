@@ -39,7 +39,9 @@ pipeline {
                branch "qa"
             }
              steps {
-                 sh 'echo deploying $APP_NAME to qa'
+                 sh """
+                    curl '${env.DEPLOYBOT_ENV_TRIGGER_URL}' -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id": ${env.DEPLOYBOT_ENV_ID}}'
+                  """
              }             
          }
 
@@ -49,7 +51,7 @@ pipeline {
             }
              steps {
                   sh """
-                    curl https://loanhero.deploybot.com/api/v1/deployments -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id": 135353}'
+                    curl '${env.DEPLOYBOT_ENV_TRIGGER_URL}' -X POST -H 'X-Api-Token: ${env.DEPLOYBOT_TEST_TOKEN}' -d '{"environment_id": ${env.DEPLOYBOT_ENV_ID}}'
                   """
              }             
          }
