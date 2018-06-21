@@ -60,12 +60,12 @@ pipeline {
      
      post {
           failure {
-               mail to: 'dilkhush.soni@trantorinc.com',
+               mail to: 'nishutosh.sharma@trantorinc.com',
                     subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
                     body: "Something is wrong with ${env.BUILD_URL}"
           }
           success {
-               mail to: 'dilkhush.soni@trantorinc.com',
+               mail to: 'nishutosh.sharma@trantorinc.com',
                     subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
                     body: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
           }
@@ -73,6 +73,6 @@ pipeline {
 
 
      environment {
-        APP_NAME = 'my-app'
+        APP_NAME = 'jenkins-test-app'
      }
 }
